@@ -39,8 +39,6 @@ syn keyword Constant    Services XPCOMUtils Task Promise console
 syn keyword Boolean     false true 
 syn keyword Special     this window document arguments
 syn keyword Keyword     Array Boolean Date Function Number Object String RegExp Map Set
-syn keyword Keyword     function
-syn match   Keyword     "function*"
 
 syn match   Identifier  /\(?\s*\)\@<!\<\w\+\(\s*:\)\@=/
 syn region  String      start=+"+  skip=+\\\\\|\\"+  end=+"\|$+  
@@ -66,8 +64,8 @@ syn keyword Repeat      while for do in of
 " mochitest stuff
 syn keyword Function     is ok isnot 
 
-syn region  javascriptFunctionDeclaration start="function \w\+" end="\>" contains=javascriptFunctionKeyword,javascriptFunctionName
-syn match   javascriptFunctionName         " \@<=\w\+" contained
+syn region  javascriptFunctionDeclaration start="function\*\? " end="\>" contains=javascriptFunctionKeyword,javascriptFunctionName
+syn match   javascriptFunctionName         " \w\+" contained
 
 syn region  javascriptArrowFunctionDeclaration start="\w\+\s*=\s*([^()]*)\s*" end="=>" contains=javascriptArrowFunctionName
 syn match   javascriptArrowFunctionName        "\w\+\(\s*=\)\@=" contained
