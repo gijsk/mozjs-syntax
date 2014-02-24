@@ -67,8 +67,7 @@ syn keyword Function     is ok isnot
 syn region  javascriptFunctionDeclaration start="function\*\? " end="\>" contains=javascriptFunctionKeyword,javascriptFunctionName
 syn match   javascriptFunctionName         " \w\+" contained
 
-syn region  javascriptArrowFunctionDeclaration start="\w\+\s*=\s*([^()]*)\s*" end="=>" contains=javascriptArrowFunctionName
-syn match   javascriptArrowFunctionName        "\w\+\(\s*=\)\@=" contained
+syn match   javascriptArrowFunctionName        "\w\+\(\s*=\s*([^()]*)\s*=>\)\@="
 
 
 
